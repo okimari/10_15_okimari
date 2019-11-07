@@ -96,7 +96,7 @@ $kanri_menu = kanri_menu();
                         </li>
                         <li>
                             <div class="form-group">
-                                <label for="upfile">Image</label>
+                                <label for="upfile">プロフィール画像</label>
                                 <!-- inputを追加 -->
                                 <input type="file" id="upfile" name="upfile" accept="image/*" capture="camera">
                             </div>

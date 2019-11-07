@@ -29,30 +29,27 @@ if ($status == false) {
     //http://php.net/manual/ja/pdostatement.fetch.php
     while ($result = $stmt->fetch(PDO::FETCH_ASSOC)) {
         $view .= '<li>';
-        //$view .= '<a href="page.php?id=' . $result['id'] . '"';
-        $view .= ' <img src="' . $result['image'] . '" alt="画像">';
-        //$view .= '<dl>';
-        //$view .= '<dt>' . $result['name'] . '</dt>'; //書籍の名前
-        // $view .= '<td>' . $result['url'] . '</td>'; //書籍のURL
-        // $view .= '<td>' . $result['comment'] . '</td>'; //本のコメント
-
-        // if (time() - strtotime($result['indate']) < (3600 * 24)) {
-        //     echo "new";
-        // }
-        // time();
-
-        //$view .= '<dd>';
-        //$view .= '<p class="category02">' . $result['category'] . '</p>'; //カテゴリーだけlist.jsで呼び出すのでclss名追加
-        //$view .= '<p class="indate">' . $result['indate'] . '</p>'; //日時 
-        //$view .= '<dd>';
-        //$view .= '<td><a href="detail.php?id=' . $result['id'] . '" class="badge badge-primary">Edit</a></td>'; //日時
-        //$view .= '<td><a href="delete.php?id=' . $result['id'] . '" class="badge badge-danger">Delete</a></td>'; //日時
-        //$view .= '</dl>';
-        //$view .= '</a>';
+        $view .= ' <img src="' . $result['image'] . '" alt="画像" heght="100px">';
+        $view .= '<dl>';
+        $view .= '<dt>' . $result['name'] . '</dt>'; //書籍の名前
+        $view .= '<td>' . $result['url'] . '</td>'; //書籍のURL
+        $view .= '<td>' . $result['comment'] . '</td>'; //本のコメント
+        //if (time() - strtotime($result['indate']) < (3600 * 24)) {
+        //echo "new";
+        //}
+        //time();
+        $view .= '<dd>';
+        $view .= '<p class="category02">' . $result['category'] . '</p>'; //カテゴリーだけlist.jsで呼び出すのでclss名追加
+        $view .= '<p class="indate">' . $result['indate'] . '</p>'; //日時 
+        $view .= '<dd>';
+        $view .= '<td><a href="detail.php?id=' . $result['id'] . '" class="badge badge-primary">Edit</a></td>'; //日時
+        $view .= '<td><a href="delete.php?id=' . $result['id'] . '" class="badge badge-danger">Delete</a></td>'; //日時
+        $view .= '</dl>';
         $view .= '</li>';
     }
 }
 $menu = menu();
+
 ?>
 
 
@@ -147,17 +144,6 @@ $menu = menu();
                 var dateArr = textVal.split('-'); // 年月日に分けて配列に入れる
             });
         });
-    </script>
-
-    <script>
-        $('#pagepost').on('click', function() {
-            window.location.href = 'page.php'; // 通常の遷移
-        });
-        // $('#location').click(function() {
-        //     window.location.href = '/';
-        //     // target="_top"
-        //     // top.location.href = '/';
-        // });
     </script>
 </body>
 
